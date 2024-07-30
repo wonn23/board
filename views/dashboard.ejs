@@ -1,0 +1,14 @@
+<%- include('layout') %>
+
+<h1>Dashboard</h1>
+<a href="/posts/add">Add New Post</a>
+<ul>
+  <% posts.forEach(function(post) { %>
+  <li>
+    <h2><%= post.title %></h2>
+    <p><%= post.body %></p>
+    <a href="/posts/edit/<%= post._id %>">Edit</a>
+    <a href="/posts/delete/<%= post._id %>">Delete</a>
+  </li>
+  <% }); %>
+</ul>
